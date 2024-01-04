@@ -2,32 +2,44 @@
 
 import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
-import { cog, flash, list } from 'ionicons/icons';
-import Home from './Feed';
-import Lists from './Lists';
-import ListDetail from '../../components/ListDetail';
+import { home, cog, chatbubbles, people, flash } from 'ionicons/icons';
+import Feed from './Feed';
 import Settings from './Settings';
+import ListDetail from '../../components/ListDetail';
+import Chat from './Chat';
+import Meet from '@/app/tabs/Meet';
+import Like from '@/app/tabs/Like';
 
 const Tabs = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route path="/tabs/feed" render={() => <Home />} exact={true} />
-        <Route path="/tabs/lists" render={() => <Lists />} exact={true} />
+        <Route path="/tabs/feed" render={() => <Feed />} exact={true} />
+        <Route path="/tabs/meet" render={() => <Meet />} exact={true} />
+        <Route path="/tabs/like" render={() => <Like />} exact={true} />
+        <Route path="/tabs/chat" render={() => <Chat />} exact={true} />
         <Route path="/tabs/lists/:listId" render={() => <ListDetail />} exact={true} />
         <Route path="/tabs/settings" render={() => <Settings />} exact={true} />
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/tabs/feed">
+          <IonIcon icon={home} />
+          <IonLabel>home</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab2" href="/tabs/meet">
           <IonIcon icon={flash} />
-          <IonLabel>Feed</IonLabel>
+          <IonLabel>meet</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab2" href="/tabs/lists">
-          <IonIcon icon={list} />
-          <IonLabel>Lists</IonLabel>
+        <IonTabButton tab="tab3" href="/tabs/like">
+          <IonIcon icon={people} />
+          <IonLabel>like</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
+        <IonTabButton tab="tab4" href="/tabs/chat">
+          <IonIcon icon={chatbubbles} />
+          <IonLabel>chat</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab5" href="/tabs/settings">
           <IonIcon icon={cog} />
           <IonLabel>Settings</IonLabel>
         </IonTabButton>
