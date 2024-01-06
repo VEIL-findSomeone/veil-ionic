@@ -1,0 +1,57 @@
+
+.bgg
+{
+    background: rgba(203, 30, 114, 0.257);
+    border-radius: var(--swipe-card-border-radius);
+    height: 20vh;
+    width: 100%;
+
+    .card-title
+    {
+        h1
+        {
+            color: white !important;
+            font-family: 'RubikBold', sans-serif;
+            text-decoration: underline;
+            margin: 0;
+        }
+    }
+
+    .bottm-holder
+    {
+        bottom: 10px;
+        left: 10px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .caption-title
+    {
+        color: white;
+        font-family: 'RubikMedium', sans-serif;
+    }
+
+    .caption-time
+    {
+        color: rgb(202, 202, 202);
+        font-family: 'RubikBold', sans-serif;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+}
+
+
+.test2
+{
+    border-radius: 10px;
+    height: 20vh;
+    width: 100%;
+}
+
+.test-card , .test2
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+    ;
+}

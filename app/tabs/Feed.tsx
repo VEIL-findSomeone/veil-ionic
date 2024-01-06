@@ -21,7 +21,7 @@ import { HomeItem } from '@/mock';
 
 const FeedCard: React.FC<HomeItem> = ({ title, type, text, author, authorAvatar, image }) => (
   <Card className="my-4 mx-auto">
-    <div className="h-32 w-full relative">
+    <div className="h-64 w-full relative">
       <img
         className="rounded-t-xl object-cover min-w-full min-h-full max-w-full max-h-full"
         src={image}
@@ -54,7 +54,7 @@ const Feed = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Feed</IonTitle>
+          <IonTitle>오늘의 추천</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -68,7 +68,7 @@ const Feed = () => {
       <IonContent className="ion-padding" fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Feed</IonTitle>
+            <IonTitle size="large">오늘의 추천</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Notifications open={showNotifications} onDidDismiss={() => setShowNotifications(false)} />

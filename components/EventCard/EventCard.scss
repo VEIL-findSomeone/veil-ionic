@@ -1,0 +1,76 @@
+.event-card {
+  height: 0;
+  padding-top: 100%;
+  box-shadow: var(--card-box-shadow);
+  border-radius: var(--swipe-card-border-radius);
+  position: relative;
+
+  .overlay
+  {
+    background: rgba(0, 0, 0, 0.283);
+    border-radius: var(--swipe-card-border-radius);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+    .card-inside
+    {
+      background: rgba(0, 0, 0, 0.283);
+      border-radius: var(--swipe-card-border-radius);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 5;
+    }
+    .caption-text {
+    padding-bottom: 10px;
+    position: relative;
+    .card-title
+    {
+      color: white;
+     
+    }
+
+    
+  }
+
+ 
+
+  .bottom-holder
+  {
+    bottom: 5px;
+    left: 10px;
+    position: absolute;
+    width: 100%;
+
+    .caption-title
+    {
+      color: var(--ion-color-light);
+      font-size: 0.8em;
+    }
+
+    .caption-time {
+      color: gray;
+      font-size: 0.6em;
+    }
+  }
+
+  .btn
+  {
+    background: var(--ion-color-primary);
+    border-radius: 20px;
+    color: white;
+    font-size:0.8em;
+    font-weight: 700;
+    margin: 0 auto;
+    height: 2rem;
+    width: 120px;
+  }
+  
+
+ 
+
+}
