@@ -18,9 +18,7 @@ import InputWithGiphy from '@/components/InputWithGiphy/InputWithGiphy';
 import './Chat.scss';
 import MESSAGES from './messages.dummy';
 
-type Props = {};
-
-const Index: React.FC<Props> = () => {
+const Index = () => {
   const [messages, setMessages] = useState<any[]>(MESSAGES);
   const contentRef = useRef<React.RefObject<HTMLIonContentElement>>(null);
 
@@ -121,7 +119,7 @@ const Index: React.FC<Props> = () => {
               <div className="chat-item-inner">
                 {!item.isSender && (
                   <div className="chat-avatar">
-                    <img src={item.avatar} alt="" />
+                    <img src={item.avatar} alt="avartar" />
                   </div>
                 )}
 
@@ -135,7 +133,7 @@ const Index: React.FC<Props> = () => {
                         dangerouslySetInnerHTML={{ __html: nl2br(item.body) }}
                       />
                     )}
-                    {item.type === 'image' && <img src={item.body} alt="" />}
+                    {item.type === 'image' && <img src={item.body} alt="image" />}
                   </div>
 
                   {item.isSender && (
@@ -165,7 +163,5 @@ const Index: React.FC<Props> = () => {
     </IonPage>
   );
 };
-
-Index.defaultProps = {};
 
 export default Index;

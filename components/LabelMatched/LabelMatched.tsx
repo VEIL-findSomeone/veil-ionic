@@ -1,6 +1,4 @@
 import React from 'react';
-import {} from '@ionic/react';
-import {} from 'ionicons/icons';
 import './LabelMatched.scss';
 
 type Props = {};
@@ -19,7 +17,5 @@ const LabelMatched: React.FC<Props> = () => {
     </div>
   );
 };
-
-LabelMatched.defaultProps = {};
 
 export default LabelMatched;

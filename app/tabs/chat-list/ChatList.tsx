@@ -101,6 +101,4 @@ const ChatList: React.FC<Props> = ({ history }) => {
   );
 };
 
-ChatList.defaultProps = {};
-
 export default ChatList;

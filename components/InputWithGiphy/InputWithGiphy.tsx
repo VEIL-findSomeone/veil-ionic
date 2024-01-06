@@ -87,6 +87,4 @@ const InputWithGiphy: React.FC<Props> = ({ onChange }) => {
   );
 };
 
-InputWithGiphy.defaultProps = {};
-
 export default InputWithGiphy;

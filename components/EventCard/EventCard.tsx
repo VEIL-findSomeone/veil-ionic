@@ -1,6 +1,6 @@
-import React from "react";
-import {IonRippleEffect} from "@ionic/react";
-import "./EventCard.scss";
+import React from 'react';
+import { IonRippleEffect } from '@ionic/react';
+import './EventCard.scss';
 
 type Props = {
   events: any;
@@ -27,7 +27,5 @@ const EventCard: React.FC<Props> = ({ events }) => {
     </div>
   );
 };
-
-EventCard.defaultProps = {};
 
 export default EventCard;
