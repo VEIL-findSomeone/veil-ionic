@@ -6,6 +6,14 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Tabs from './tabs';
 
+// custom CSS
+import './sass/variables.override.scss';
+import './sass/helper.scss';
+import './sass/app.scss';
+import './sass/dark.scss';
+
+import '@/styles/fonts.css';
+
 setupIonicReact({});
 
 window.matchMedia('(prefers-color-scheme: dark)').addListener(async status => {
