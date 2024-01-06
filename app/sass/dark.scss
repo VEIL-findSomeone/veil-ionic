@@ -241,9 +241,9 @@ body.dark-theme {
     --ion-toolbar-background: var(--ion-color-white) !important;
   }
 
-  .explore-bg {
-    --background: linear-gradient(var(--ion-color-white), var(--ion-color-step-100));
-  }
+  //.explore-bg {
+  //  --background: linear-gradient(var(--ion-color-white), var(--ion-color-step-100));
+  //}
 
   /* CHAT */
   .chat-list .chat-item:not(.chat-item-sender) {

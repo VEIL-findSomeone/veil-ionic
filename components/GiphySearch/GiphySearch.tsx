@@ -66,7 +66,7 @@ const GiphySearch: React.FC<Props> = ({ onSelect, onClose }) => {
           <div className="scroll-horizontal">
             {gifs.map((gif: any) => (
               <div className="scroll-item" key={gif.id} onClick={() => handleSelect(gif)}>
-                <img src={gif.images.fixed_height_small.url} alt="" />
+                <img src={gif.images.fixed_height_small.url} alt="giphy" />
               </div>
             ))}
           </div>
@@ -91,7 +91,5 @@ const GiphySearch: React.FC<Props> = ({ onSelect, onClose }) => {
     </div>
   );
 };
-
-GiphySearch.defaultProps = {};
 
 export default GiphySearch;
