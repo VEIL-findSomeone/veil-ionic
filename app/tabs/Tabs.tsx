@@ -27,23 +27,23 @@ const Tabs = () => {
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/tabs/feed">
           <IonIcon icon={home} />
-          <IonLabel>home</IonLabel>
+          <IonLabel>홈</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab2" href="/tabs/meet">
           <IonIcon icon={flash} />
-          <IonLabel>meet</IonLabel>
+          <IonLabel>번개</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab3" href="/tabs/like">
           <IonIcon icon={people} />
-          <IonLabel>like</IonLabel>
+          <IonLabel>좋아요</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab4" href="/tabs/chat-list">
           <IonIcon icon={chatbubbles} />
-          <IonLabel>chat</IonLabel>
+          <IonLabel>채팅</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab5" href="/tabs/settings">
           <IonIcon icon={cog} />
-          <IonLabel>Settings</IonLabel>
+          <IonLabel>설정</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
