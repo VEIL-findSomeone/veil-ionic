@@ -1,25 +1,25 @@
 const avatar = [
   {
     id: 1,
-    name: '고성태',
+    name: '눈맑은 고라니',
     profileUrl: '/avatar/고성태.jpeg',
     lastMessage: '안녕하세요',
   },
   {
     id: 2,
-    name: '고찬석',
+    name: '마장동 고찬석',
     profileUrl: '/avatar/고찬석.jpeg',
     lastMessage: '사랑해❣️',
   },
   {
     id: 3,
-    name: '김명중',
+    name: '라이온맨',
     profileUrl: '/avatar/김명중.jpeg',
     lastMessage: 'ㄱㄱ ㅋㅋㅋㅋㅋㅋ',
   },
   {
     id: 4,
-    name: '김익선',
+    name: '익선동 김삿갓',
     profileUrl: '/avatar/김익선.jpeg',
     lastMessage: '아니라니까 ㅋㅋㅋㅋㅋ',
   },
@@ -37,7 +37,7 @@ const avatar = [
   },
   {
     id: 7,
-    name: '박금로',
+    name: '금로 파크',
     profileUrl: '/avatar/박금로.jpeg',
     lastMessage: 'ㅇㅇ',
   },
@@ -49,7 +49,7 @@ const avatar = [
   },
   {
     id: 9,
-    name: '성재식',
+    name: '뿔없는 악어',
     profileUrl: '/avatar/성재식.jpeg',
     lastMessage: '어제?',
   },
@@ -61,7 +61,7 @@ const avatar = [
   },
   {
     id: 11,
-    name: '이관용',
+    name: '피곤한 직장인',
     profileUrl: '/avatar/이관용.jpeg',
     lastMessage: '귀여워ㅋㅋㅋㅋㅋㅋㅋㅋㅋ',
   },

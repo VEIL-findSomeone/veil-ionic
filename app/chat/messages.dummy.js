@@ -39,7 +39,7 @@ const dummy = [
   {
     id: 5,
     isSender: false,
-    avatar: 'assets/img/avatars/emma3.jpeg',
+    avatar: '/avatar/이관용.jpeg',
     type: 'text', // text || image
     body: '거의 다 왔어요',
     timestamp: 'Mar 30, 2021 9:53 AM',
