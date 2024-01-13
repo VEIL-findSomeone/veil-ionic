@@ -14,13 +14,11 @@ import {
 } from '@ionic/react';
 import './Discover.scss';
 import EVENTS from '@/app/tabs/meet/events.dummy';
-// import EVENTS2 from '@/app/tabs/meet/events2.dummy';
 // import EventCard from '@/components/EventCard/EventCard';
 import Testcard from '@/components/Vibecard/VibeCard';
 
 const Meet: React.FC = ({}) => {
   const events: any[] = [...EVENTS];
-  // const events2: any[] = [...EVENTS2];
 
   const [isActive, setActive] = useState(true);
 
@@ -57,33 +55,6 @@ const Meet: React.FC = ({}) => {
             ))}
           </div>
         </div>
-        {/*{isActive &&*/}
-        {/*  <div className="section" >*/}
-        {/*    <div className="title">*/}
-        {/*      <h2>For You</h2>*/}
-        {/*      <h4>Recommendations based on your profile</h4>*/}
-        {/*    </div>*/}
-
-        {/*    <div>*/}
-        {/*      <IonRow>*/}
-        {/*        {events2.map((event, index) => (*/}
-        {/*          <IonCol*/}
-        {/*            size="6"*/}
-        {/*            key={event.id}*/}
-        {/*          >*/}
-        {/*            <EventCard  events={event} />*/}
-        {/*          </IonCol>*/}
-        {/*        ))}*/}
-        {/*      </IonRow>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*}*/}
-        {/* <Overlay
-          prevYPosition={someState}
-          isVisible={isActive}
-          onClose={HnadleOverlay}
-          id={selected}
-        /> */}
       </IonContent>
     </IonPage>
   );

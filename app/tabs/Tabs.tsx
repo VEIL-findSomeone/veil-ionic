@@ -3,7 +3,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { home, cog, chatbubbles, people, flash } from 'ionicons/icons';
-import Feed from './Feed';
+import Swipe from './swipe/Explore'
 import Settings from './Settings';
 import ListDetail from '../../components/ListDetail';
 import ChatList from './chat-list/ChatList';
@@ -15,7 +15,7 @@ const Tabs = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route path="/tabs/feed" render={() => <Feed />} exact={true} />
+        <Route path="/tabs/feed" component={Swipe} exact={true} />
         <Route path="/tabs/meet" component={Meet} exact={true} />
         <Route path="/tabs/like" render={() => <Like />} exact={true} />
         <Route path="/tabs/chat-list" component={ChatList} exact={true} />
