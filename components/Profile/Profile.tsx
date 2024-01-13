@@ -1,22 +1,10 @@
 import React from 'react';
-import {
-  IonHeader,
-  IonToolbar,
-  IonContent,
-  IonFab,
-  IonButton,
-  IonIcon,
-  IonRow,
-  IonCol,
-  IonText,
-} from '@ionic/react';
+import { IonHeader, IonToolbar, IonContent, IonFab, IonButton, IonIcon } from '@ionic/react';
 import {
   arrowDown,
   checkmarkOutline,
   briefcaseOutline,
   locationOutline,
-  musicalNote,
-  play,
   closeSharp,
   star,
   heartSharp,
@@ -69,7 +57,7 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
             </div>
             <div className="info-item">
               <IonIcon icon={locationOutline} />
-              10,001 kilometers away
+              900m 근처 거주
             </div>
           </div>
 
@@ -93,16 +81,15 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
           <p>Grew up on Earth. Want to dance on Mars.</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet augue eu purus
-            ultricies ultricies. Ut a auctor massa, id finibus lectus....{' '}
-            <a href="https://ionwizard.gumroad.com/">ionwizard.com</a>
+            ultricies ultricies. Ut a auctor massa, id
           </p>
         </div>
 
-        <div className="profile-footer border-bottom">
-          <IonButton fill="clear" expand="block" color="medium" size="small">
-            <div className="button-label">신고하기</div>
-          </IonButton>
-        </div>
+        {/*<div className="profile-footer border-bottom">*/}
+        {/*  <IonButton fill="clear" expand="block" color="medium" size="small">*/}
+        {/*    <div className="button-label">신고하기</div>*/}
+        {/*  </IonButton>*/}
+        {/*</div>*/}
 
         <IonFab className="bottom-actions" vertical="bottom" horizontal="center" slot="fixed">
           <IonButton color="white" className="button-custom button-icon button-dislike button-lg">

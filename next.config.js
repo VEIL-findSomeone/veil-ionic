@@ -9,7 +9,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'out',
   trailingSlash: true,
-  reactStrictMode: false,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

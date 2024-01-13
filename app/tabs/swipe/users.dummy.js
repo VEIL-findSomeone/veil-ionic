@@ -15,7 +15,7 @@ const dummy = [
   {
     id: 2,
     name: '뿔없는 악어',
-    age: 27,
+    age: 32,
     job_title: '배우',
     profile_image_url: '/people/21.jpg',
     images: [
@@ -28,7 +28,7 @@ const dummy = [
   {
     id: 3,
     name: '라이온맨',
-    age: 22,
+    age: 42,
     job_title: '프로게이머',
     profile_image_url: '/people/31.jpg',
     images: [

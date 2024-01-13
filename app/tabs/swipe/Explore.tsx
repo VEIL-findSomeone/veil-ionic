@@ -27,7 +27,7 @@ import MatchedModal from '@/components/MatchedModal/MatchedModal';
 import Profile from '@/components/Profile/Profile';
 import { enterAnimation, leaveAnimation } from '@/app/animations/animations2';
 import USERS from './users.dummy';
-import { RouteComponentProps } from 'react-router';
+import { debounce } from 'lodash';
 
 type User = {
   id: number;
@@ -54,7 +54,7 @@ const Explore = (props: unknown) => {
 
   const handleLogout = () => {
     // @ts-ignore
-    props.history.push('/userprofile');
+    props.history.push('/tabs/settings');
   };
 
   useEffect(() => {
@@ -136,7 +136,7 @@ const Explore = (props: unknown) => {
             20,
             type === 'NOPE' ? ReactSwing.DIRECTION.LEFT : ReactSwing.DIRECTION.RIGHT
           );
-        }, 4000);
+        }, 300);
       }
     }
   };
@@ -210,9 +210,10 @@ const Explore = (props: unknown) => {
     });
   };
 
+  const debouncedHandleCardThrowOutEnd = debounce(handleCardThrowOutEnd, 150);
+
   useEffect(() => {
     // cards 상태가 바뀌었을 때 실행되는 부수 효과
-    console.log('cards바뀌어서 useEffect 실행!!!');
     const topCardEl = getTopCardEl();
 
     if (topCardEl) {
@@ -222,7 +223,6 @@ const Explore = (props: unknown) => {
     setIsLocked(false);
 
     if (cards.length === 0) {
-      console.log('카드 다떨어져서 데이터 요청해버림;;');
       getData(); // 카드가 없으면 데이터 로드
     }
   }, [cards.length]);
@@ -280,7 +280,7 @@ const Explore = (props: unknown) => {
             </IonAvatar>
           </IonButtons>
           <IonTitle className="ion-text-center">
-            <img src="assets/img/logowords.svg" alt="" />
+            <img src="/logo/veil-logo-wide.svg" alt="" className="ml-16" />
           </IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -304,7 +304,7 @@ const Explore = (props: unknown) => {
               throwin={handleThrowIn}
               throwoutleft={(e: any) => handleCardThrowOut(e, ReactSwing.DIRECTION.LEFT)}
               throwoutright={(e: any) => handleCardThrowOut(e, ReactSwing.DIRECTION.RIGHT)}
-              throwoutend={handleCardThrowOutEnd}
+              throwoutend={debouncedHandleCardThrowOutEnd}
             >
               {cards.map((item: User, index) => (
                 <div
