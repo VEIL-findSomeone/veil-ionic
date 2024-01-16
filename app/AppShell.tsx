@@ -13,6 +13,7 @@ import './sass/app.scss';
 import './sass/dark.scss';
 
 import '@/styles/fonts.css';
+import Landing from '@/app/landing/Landing';
 
 setupIonicReact({});
 
@@ -31,7 +32,9 @@ const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <IonRouterOutlet id="main">
           {children}
           <Route path="/tabs" render={() => <Tabs />} />
-          <Route path="/" render={() => <Redirect to="/tabs/feed" />} exact={true} />
+          <Route path="/landing" component={Landing} exact />
+          <Route path="/" render={() => <Redirect to="/landing" />} exact={true} />
+          {/*<Route path="/" render={() => <Redirect to="/tabs/feed" />} exact={true} />*/}
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
