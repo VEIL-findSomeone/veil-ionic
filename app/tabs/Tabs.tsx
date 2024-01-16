@@ -3,7 +3,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { home, cog, chatbubbles, people, flash } from 'ionicons/icons';
-import Swipe from './swipe/Explore'
+import Swipe from './swipe/Explore';
 import Settings from './Settings';
 import ListDetail from '../../components/ListDetail';
 import ChatList from './chat-list/ChatList';
@@ -27,23 +27,23 @@ const Tabs = () => {
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/tabs/feed">
           <IonIcon icon={home} />
-          <IonLabel>홈</IonLabel>
+          {/*<IonLabel>홈</IonLabel>*/}
         </IonTabButton>
         <IonTabButton tab="tab2" href="/tabs/meet">
           <IonIcon icon={flash} />
-          <IonLabel>번개</IonLabel>
+          {/*<IonLabel>번개</IonLabel>*/}
         </IonTabButton>
         <IonTabButton tab="tab3" href="/tabs/like">
           <IonIcon icon={people} />
-          <IonLabel>좋아요</IonLabel>
+          {/*<IonLabel>좋아요</IonLabel>*/}
         </IonTabButton>
         <IonTabButton tab="tab4" href="/tabs/chat-list">
           <IonIcon icon={chatbubbles} />
-          <IonLabel>채팅</IonLabel>
+          {/*<IonLabel>채팅</IonLabel>*/}
         </IonTabButton>
         <IonTabButton tab="tab5" href="/tabs/settings">
           <IonIcon icon={cog} />
-          <IonLabel>설정</IonLabel>
+          {/*<IonLabel>설정</IonLabel>*/}
         </IonTabButton>
       </IonTabBar>
     </IonTabs>

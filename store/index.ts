@@ -1,5 +1,5 @@
 import { Store as PullStateStore } from 'pullstate';
-import { lists, homeItems, notifications } from '@/mock';
+import { lists, notifications } from '@/mock';
 
 interface Settings {
   enableNotifications: boolean;
@@ -11,7 +11,6 @@ export interface StoreState {
   menuOpen: boolean;
   notificationsOpen: boolean;
   currentPage: string | null;
-  homeItems: typeof homeItems;
   lists: typeof lists;
   notifications: typeof notifications;
   settings: Settings;
@@ -23,7 +22,6 @@ const Store = new PullStateStore<StoreState>({
   menuOpen: false,
   notificationsOpen: false,
   currentPage: null,
-  homeItems,
   lists,
   notifications,
   settings: {
