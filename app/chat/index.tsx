@@ -50,7 +50,7 @@ const Index = () => {
       {
         id: prev.length,
         isSender: false,
-        avatar: '/avatar/이관용.jpeg',
+        avatar: '/avatar/1.jpg',
         type: 'text',
         body: '넵! ㅎㅎ',
         timestamp: 'Mar 30, 2021 9:57am',

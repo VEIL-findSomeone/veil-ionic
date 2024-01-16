@@ -41,7 +41,7 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
         onChange={handleSlideChange}
       />
 
-      <div className="card-caption">
+      <div className="card-caption" onClick={handleViewInfo}>
         <IonRow className="ion-justify-content-center ion-align-items-center">
           <IonCol>
             <div className="card-title">
@@ -54,17 +54,17 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
 
             {currentIndex === 0 && (
               <div className="card-user-info">
-                <div>
-                  <IonIcon icon={ellipse} color="success" />
-                  현재 접속중
-                </div>
-                <div>
-                  <IonIcon icon={briefcaseOutline} />
-                  {user.job_title}
-                </div>
+                {/*<div>*/}
+                {/*  <IonIcon icon={ellipse} color="success" />*/}
+                {/*  현재 접속중*/}
+                {/*</div>*/}
+                {/*<div>*/}
+                {/*  <IonIcon icon={briefcaseOutline} />*/}
+                {/*  {user.job_title}*/}
+                {/*</div>*/}
                 <div>
                   <IonIcon icon={locationOutline} />
-                  600m 근처
+                  {user.location}
                 </div>
               </div>
             )}
@@ -102,7 +102,7 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
           </IonCol>
           {!isPreview && (
             <IonCol size="auto">
-              <IonIcon className="button-info" icon={informationCircle} onClick={handleViewInfo} />
+              {/*<IonIcon className="button-info" icon={informationCircle} onClick={handleViewInfo} />*/}
             </IonCol>
           )}
         </IonRow>
