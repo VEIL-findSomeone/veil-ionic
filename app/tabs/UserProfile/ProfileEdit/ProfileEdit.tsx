@@ -1,5 +1,6 @@
 'use client';
 
+import axios from 'axios';
 import React, { useState, useTransition } from 'react';
 import {
   IonHeader,
@@ -78,15 +79,21 @@ const ProfileEdit: React.FC<Props> = ({ user, onClose }) => {
   const onSubmit: SubmitHandler<FormData> = data => {
     console.log('입력된 정보: ', data);
     startTransition(async () => {
-      const result = await addUserInfo(data);
-
-      console.log(result);
-      const { error } = JSON.parse(result);
-      if (!error?.message) {
-        console.log(data.mbti, data.region1, '저장 완료');
-
-        form.reset();
+      try {
+        const response = await axios.post('/api/profile/edit', { data });
+        console.log(response.data); // 성공 응답 처리
+        alert('User created successfully');
+      } catch (error) {
+        console.error(error);
+        alert('Error creating user');
       }
+      // const result = await addUserInfo(data);
+      // const { error } = JSON.parse(result);
+      // if (!error?.message) {
+      //   console.log(data.mbti, data.region1, '저장 완료');
+      //
+      //   form.reset();
+      // }
     });
 
     form.reset();

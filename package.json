@@ -25,7 +25,7 @@
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.3",
     "@types/jest": "^26.0.20",
-    "axios": "^1.6.5",
+    "axios": "^1.6.7",
     "classnames": "^2.3.2",
     "framer-motion": "^10.17.9",
     "lodash": "^4.17.21",
