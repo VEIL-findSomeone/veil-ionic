@@ -9,9 +9,10 @@ import {
 } from 'ionicons/icons';
 import './SwipeCard.scss';
 import ProfileImageSlides from '../ProfileImageSlides/ProfileImageSlides';
+import { User } from '@/app/tabs/swipe/Explore';
 
 type Props = {
-  user?: any;
+  user: User;
   isPreview?: boolean;
   onNoMoreSlide?: (l: boolean) => void;
   onViewInfo?: () => void;
@@ -35,7 +36,12 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
   return (
     <div className="swipe-card">
       <ProfileImageSlides
-        images={user.images}
+        images={[
+          { id: 0, imageUrl: user.profile_veil_img_url },
+          { id: 1, imageUrl: user.profile_veil_img_url },
+          { id: 2, imageUrl: user.profile_veil_img_url },
+          { id: 3, imageUrl: user.profile_veil_img_url },
+        ]}
         isClickable
         onNoMoreSlide={handleNoMoreSlide}
         onChange={handleSlideChange}
@@ -46,7 +52,7 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
           <IonCol>
             <div className="card-title">
               <span className="card-user-name">{user.name}</span>
-              <span className="card-user-age">{user.age}</span>
+              <span className="card-user-age">{user.mbti}</span>
               <span className="icon-verified">
                 <IonIcon icon={checkmarkOutline} />
               </span>
@@ -64,7 +70,7 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
                 {/*</div>*/}
                 <div>
                   <IonIcon icon={locationOutline} />
-                  {user.location}
+                  {user.region1}, {user.region2}
                 </div>
               </div>
             )}
@@ -93,10 +99,7 @@ const SwipeCard: React.FC<Props> = ({ user, isPreview, onNoMoreSlide, onViewInfo
 
             {currentIndex > 1 && (
               <div className="card-user-info">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet augue eu
-                  purus ultricies ultricies. Ut a auctor massa, id finibus lectus....
-                </p>
+                <p>{user.self_description}</p>
               </div>
             )}
           </IonCol>

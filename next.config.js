@@ -6,8 +6,8 @@ const nextConfig = {
   },
   swcMinify: true,
   transpilePackages: ['@ionic/react', '@ionic/core', '@stencil/core', 'ionicons'],
-  output: 'export',
-  distDir: 'out',
+  // output: 'export',
+  // distDir: 'out',
   trailingSlash: true,
   reactStrictMode: true,
 };

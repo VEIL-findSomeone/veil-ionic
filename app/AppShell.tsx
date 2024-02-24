@@ -14,6 +14,7 @@ import './sass/dark.scss';
 
 import '@/styles/fonts.css';
 import Landing from '@/app/landing/Landing';
+import Login from '@/app/login';
 
 setupIonicReact({});
 
@@ -32,7 +33,8 @@ const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <IonRouterOutlet id="main">
           {children}
           <Route path="/tabs" render={() => <Tabs />} />
-          <Route path="/landing" component={Landing} exact />
+          <Route path="/landing" render={() => <Landing />} />
+          <Route path="/login" render={() => <Login />} />
           <Route path="/" render={() => <Redirect to="/landing" />} exact={true} />
           {/*<Route path="/" render={() => <Redirect to="/tabs/feed" />} exact={true} />*/}
         </IonRouterOutlet>

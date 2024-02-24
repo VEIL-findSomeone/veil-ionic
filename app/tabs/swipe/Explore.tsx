@@ -28,14 +28,19 @@ import Profile from '@/components/Profile/Profile';
 import { enterAnimation, leaveAnimation } from '@/app/animations/animations2';
 import USERS from './users.dummy';
 import { debounce } from 'lodash';
+import { getRandomUser } from '@/app/tabs/swipe/action';
 
-type User = {
-  id: number;
+export type User = {
+  id: string;
   name: string;
-  age: number;
-  job_title: string;
-  profile_image_url: string;
-  images: any[];
+  email: string;
+  phone: string;
+  mbti: string;
+  job_status: string;
+  self_description: string;
+  profile_veil_img_url: string;
+  region1: string;
+  region2: string;
 };
 
 const Explore = (props: unknown) => {
@@ -44,7 +49,7 @@ const Explore = (props: unknown) => {
   const [isMatchModalOpen, setIsMatchModalOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [currentProfile, setCurrentProfile] = useState<User | null>(null);
-  const [cards, setCards] = useState<User[]>([]);
+  const [cards, setCards] = useState<User[]>([...USERS]);
   const [stack, setStack] = useState(null);
 
   const stackRef = useRef<React.RefObject<HTMLDivElement>>(null);
@@ -58,17 +63,22 @@ const Explore = (props: unknown) => {
   };
 
   useEffect(() => {
+    console.log('debug1');
     getData();
   }, []);
 
-  const getData = () => {
+  const getData = async () => {
     // API call goes here
     setIsLoading(true);
 
+    const { data } = await getRandomUser();
+    console.log('가져왔다!!!', data);
+    if (data) setCards(data);
+
     setTimeout(() => {
       setIsLoading(false);
-      setCards([...USERS]);
-    }, 1000);
+      // setCards([...USERS]);
+    }, 3000);
   };
 
   const getTopCardEl = () => {
@@ -391,7 +401,7 @@ const Explore = (props: unknown) => {
       </IonModal>
 
       <IonModal isOpen={isProfileOpen}>
-        <Profile user={currentProfile} onClose={handleToggleProfile} />
+        <Profile user={currentProfile!} onClose={handleToggleProfile} />
       </IonModal>
     </IonPage>
   );

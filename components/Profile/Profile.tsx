@@ -11,9 +11,10 @@ import {
 } from 'ionicons/icons';
 import ProfileImageSlides from '@/components/ProfileImageSlides/ProfileImageSlides';
 import './Profile.scss';
+import { User } from '@/app/tabs/swipe/Explore';
 
 type Props = {
-  user: any;
+  user: User;
   onClose: () => void;
 };
 
@@ -28,7 +29,14 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
 
       <IonContent className="profile-page">
         <div className="profile-header">
-          <ProfileImageSlides images={user.images} />
+          <ProfileImageSlides
+            images={[
+              { id: 0, imageUrl: user.profile_veil_img_url },
+              { id: 1, imageUrl: user.profile_veil_img_url },
+              { id: 2, imageUrl: user.profile_veil_img_url },
+              { id: 3, imageUrl: user.profile_veil_img_url },
+            ]}
+          />
 
           <IonFab vertical="bottom" horizontal="end" edge slot="fixed">
             <IonButton
@@ -44,7 +52,7 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
         <div className="profile-info border-bottom">
           <div className="profile-title">
             <span className="profile-user-name">{user.name}</span>
-            <span className="profile-user-age">{user.age}</span>
+            <span className="profile-user-age">{user.mbti}</span>
             <span className="icon-verified">
               <IonIcon icon={checkmarkOutline} />
             </span>
@@ -53,11 +61,11 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
           <div className="profile-user-info">
             <div className="info-item">
               <IonIcon icon={briefcaseOutline} />
-              {user.job_title}
+              {user.job_status}
             </div>
             <div className="info-item">
               <IonIcon icon={locationOutline} />
-              900m 근처 거주
+              {user.region1}과 {user.region2}에 거주
             </div>
           </div>
 
@@ -78,18 +86,8 @@ const Profile: React.FC<Props> = ({ user, onClose }) => {
         </div>
 
         <div className="profile-intro border-bottom">
-          <p>Grew up on Earth. Want to dance on Mars.</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet augue eu purus
-            ultricies ultricies. Ut a auctor massa, id
-          </p>
+          <p>{user.self_description}</p>
         </div>
-
-        {/*<div className="profile-footer border-bottom">*/}
-        {/*  <IonButton fill="clear" expand="block" color="medium" size="small">*/}
-        {/*    <div className="button-label">신고하기</div>*/}
-        {/*  </IonButton>*/}
-        {/*</div>*/}
 
         <IonFab className="bottom-actions" vertical="bottom" horizontal="center" slot="fixed">
           <IonButton color="white" className="button-custom button-icon button-dislike button-lg">
